@@ -37,7 +37,7 @@ These all Modules are to build this project.
 
 <!-- CONTRIBUTING -->
 
-# In Association With
+### In Association With
 
 Newton School,
 Bengaluru, Karnataka, India
