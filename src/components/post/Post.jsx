@@ -238,7 +238,9 @@ const Post = ({ Id, image, question, timestamp, quoraUser }) => {
                     <div className="content">Share ChitChat with friends</div>
                     <div className="options">
                       <FacebookShareButton
-                        url={"https://chitchat-application.netlify.app/"}
+                        url={
+                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                        }
                       >
                         <FacebookIcon
                           logoFillColor="white"
@@ -247,7 +249,9 @@ const Post = ({ Id, image, question, timestamp, quoraUser }) => {
                         ></FacebookIcon>
                       </FacebookShareButton>
                       <WhatsappShareButton
-                        url={"https://chitchat-application.netlify.app/"}
+                        url={
+                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                        }
                       >
                         <WhatsappIcon
                           logoFillColor="white"
@@ -256,7 +260,9 @@ const Post = ({ Id, image, question, timestamp, quoraUser }) => {
                         ></WhatsappIcon>
                       </WhatsappShareButton>
                       <TelegramShareButton
-                        url={"https://chitchat-application.netlify.app/"}
+                        url={
+                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                        }
                       >
                         <TelegramIcon
                           logoFillColor="white"
@@ -265,7 +271,9 @@ const Post = ({ Id, image, question, timestamp, quoraUser }) => {
                         ></TelegramIcon>
                       </TelegramShareButton>
                       <WorkplaceShareButton
-                        url={"https://chitchat-application.netlify.app/"}
+                        url={
+                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                        }
                       >
                         <WorkplaceIcon
                           logoFillColor="white"
@@ -274,7 +282,9 @@ const Post = ({ Id, image, question, timestamp, quoraUser }) => {
                         ></WorkplaceIcon>
                       </WorkplaceShareButton>
                       <EmailShareButton
-                        url={"https://chitchat-application.netlify.app/"}
+                        url={
+                          "https://quora-clone-sanju-manna-2201.netlify.app/"
+                        }
                       >
                         <EmailIcon
                           logoFillColor="white"
