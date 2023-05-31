@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
 import "./post.scss";
+import "./modal.css";
 import { Button, Input } from "@mui/material";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
@@ -26,6 +27,22 @@ import {
 } from "firebase/firestore";
 import { db } from "../auth/firebase";
 import { selectUser } from "../../features/userSlice";
+import {
+  FacebookShareButton,
+  EmailShareButton,
+  WhatsappShareButton,
+  TelegramShareButton,
+  WorkplaceShareButton,
+} from "react-share";
+import {
+  FacebookIcon,
+  WhatsappIcon,
+  TelegramIcon,
+  EmailIcon,
+  WorkplaceIcon,
+} from "react-share";
+import CloseIcon from "@mui/icons-material/Close";
+import Popup from "reactjs-popup";
 
 const Post = ({ Id, image, question, timestamp, quoraUser }) => {
   const dispatch = useDispatch();
@@ -185,7 +202,7 @@ const Post = ({ Id, image, question, timestamp, quoraUser }) => {
             ))}
           </div>
         )}
-        <img src={image} alt="post" />
+        {image && <img src={image} alt="post" />}
       </div>
       <div className="post_footer">
         <div className="post_footerActions">
@@ -204,7 +221,72 @@ const Post = ({ Id, image, question, timestamp, quoraUser }) => {
           </div>
           <div className="share">
             <LoopOutlinedIcon />
-            <small>69</small>
+            {/* <small>69</small> */}
+            <span className="footerText">
+              <Popup
+                trigger={<button className="sharePopup"> Share </button>}
+                modal
+                nested
+              >
+                {(close) => (
+                  <div className="modal">
+                    <div className="closeBtn">
+                      <button className="clsBtn" onClick={() => close()}>
+                        <CloseIcon />
+                      </button>
+                    </div>
+                    <div className="content">Share ChitChat with friends</div>
+                    <div className="options">
+                      <FacebookShareButton
+                        url={"https://chitchat-application.netlify.app/"}
+                      >
+                        <FacebookIcon
+                          logoFillColor="white"
+                          round={true}
+                          size={50}
+                        ></FacebookIcon>
+                      </FacebookShareButton>
+                      <WhatsappShareButton
+                        url={"https://chitchat-application.netlify.app/"}
+                      >
+                        <WhatsappIcon
+                          logoFillColor="white"
+                          round={true}
+                          size={50}
+                        ></WhatsappIcon>
+                      </WhatsappShareButton>
+                      <TelegramShareButton
+                        url={"https://chitchat-application.netlify.app/"}
+                      >
+                        <TelegramIcon
+                          logoFillColor="white"
+                          round={true}
+                          size={50}
+                        ></TelegramIcon>
+                      </TelegramShareButton>
+                      <WorkplaceShareButton
+                        url={"https://chitchat-application.netlify.app/"}
+                      >
+                        <WorkplaceIcon
+                          logoFillColor="white"
+                          round={true}
+                          size={50}
+                        ></WorkplaceIcon>
+                      </WorkplaceShareButton>
+                      <EmailShareButton
+                        url={"https://chitchat-application.netlify.app/"}
+                      >
+                        <EmailIcon
+                          logoFillColor="white"
+                          round={true}
+                          size={50}
+                        ></EmailIcon>
+                      </EmailShareButton>
+                    </div>
+                  </div>
+                )}
+              </Popup>
+            </span>
           </div>
         </div>
         <div className="post_more">

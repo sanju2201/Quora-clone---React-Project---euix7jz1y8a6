@@ -184,6 +184,16 @@
   }
 }
 
+@media only screen and (max-width: 576px) {
+  .post {
+    .post_footer {
+      .post_footerActions {
+        gap: 0;
+      }
+    }
+  }
+}
+
 .modal__question {
   display: flex;
   align-items: center;

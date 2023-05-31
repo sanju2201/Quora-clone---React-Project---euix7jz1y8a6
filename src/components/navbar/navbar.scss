@@ -109,25 +109,6 @@
   }
 }
 
-@media only screen and (max-width: 1250px) {
-  .ReactModalPortal {
-    .ReactModal__Overlay {
-      .ReactModal__Content {
-        margin: 50px 250px;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .ReactModalPortal {
-    .ReactModal__Overlay {
-      .ReactModal__Content {
-        margin: 50px 100px;
-      }
-    }
-  }
-}
-
 .modal_title {
   display: flex;
   align-items: start;
@@ -189,11 +170,15 @@
       align-items: center;
       margin-top: 10px;
 
+      .MuiInputBase-root {
+        width: 100%;
+      }
+
       input {
         width: 100%;
         border: none;
         outline: none;
-        margin-left: 5px;
+        margin: 5px;
       }
     }
   }
@@ -235,6 +220,60 @@
       background-color: #a0201c;
       &:hover {
         background-color: #781814;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      .ReactModal__Content {
+        margin: 50px 250px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      .ReactModal__Content {
+        margin: 50px 100px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      width: 400;
+      height: 600;
+      z-index: 1000;
+
+      .ReactModal__Content {
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .navbar {
+    justify-content: space-around;
+    padding: 5px 0;
+    .navbar_icons {
+      display: none;
+    }
+    .navbar_input {
+      display: none;
+    }
+    .navbar_right {
+      gap: 10px;
+
+      .MuiButtonBase-root {
+        width: 100%;
+      }
+      .MuiSvgIcon-root {
+        display: none;
       }
     }
   }
